@@ -1,7 +1,4 @@
-# personal_finance
 
-A new Flutter project.
+# personal_finance_app
+A person finance app to learn mainly concepts from flutter
 
-## Getting Started
-
-this is a person finance app write em dart and flutter for learn some comcepts of framework
