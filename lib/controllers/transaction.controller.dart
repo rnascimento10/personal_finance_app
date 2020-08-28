@@ -5,12 +5,12 @@ class TransactionController {
   List<Transaction> _transactions ;
   TransactionController(){
     _transactions = [
-      new Transaction(
-          id: "1", title: "Supermercado", value: 15.0, date: DateTime.now()),
-      new Transaction(
-          id: "2", title: "Educação", value: 1500.0, date: DateTime.now()),
-      new Transaction(
-          id: "3", title: "Curso", value: 150.0, date: DateTime.now()),
+      // new Transaction(
+      //     id: "1", title: "Supermercado", value: 15.0, date: DateTime.now()),
+      // new Transaction(
+      //     id: "2", title: "Educação", value: 1500.0, date: DateTime.now()),
+      // new Transaction(
+      //     id: "3", title: "Curso", value: 150.0, date: DateTime.now()),
     ];
   }
 
