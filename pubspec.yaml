@@ -23,6 +23,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   intl:
 
 
@@ -62,13 +64,14 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Merriweather
+    - family: Oswald
       fonts:
-        - asset: lib/assets/fonts/Merriweather-Regular.ttf
-        - asset: lib/assets/fonts/Merriweather-Black.ttf
-        - asset: lib/assets/fonts/Merriweather-Bold.ttf
-        - asset: lib/assets/fonts/Merriweather-Italic.ttf
-        - asset: lib/assets/fonts/Merriweather-Light.ttf
+        - asset: lib/assets/fonts/Oswald-Regular.ttf
+        - asset: lib/assets/fonts/Oswald-Light.ttf
+        - asset: lib/assets/fonts/Oswald-Bold.ttf
+        - asset: lib/assets/fonts/Oswald-Medium.ttf
+        - asset: lib/assets/fonts/Oswald-ExtraLight.ttf
+        - asset: lib/assets/fonts/Oswald-SemiBold.ttf
           weight: 700
   #   - family: Trajan Pro
   #     fonts:

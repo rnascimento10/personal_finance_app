@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+
 class TransactionForm extends StatefulWidget {
-
-
   final void Function(String, double) onSubmit;
 
   TransactionForm(this.onSubmit);
@@ -13,17 +12,26 @@ class TransactionForm extends StatefulWidget {
 }
 
 class _TransactionFormState extends State<TransactionForm> {
-  final titleCtrl = TextEditingController();
+  final _titleCtrl = TextEditingController();
+  final _valueCtrl = TextEditingController();
 
-  final valueCtrl = TextEditingController();
+  void _onSubmit() {
+    var t = _titleCtrl.text;
+    var v = double.tryParse(_valueCtrl.text) ?? 0;
 
-  void _onSubmit(){
-      var t = titleCtrl.text;
-      var v = double.tryParse(valueCtrl.text) ?? 0;
+    if (t.isEmpty || v <= 0) return;
 
-      if (t.isEmpty || v <= 0) return ;
+    widget.onSubmit(t, v);
+  }
 
-      widget.onSubmit(t, v);
+  void _showDatePicker() {
+    showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(2019),
+      lastDate: DateTime.now(),
+      
+    );
   }
 
   @override
@@ -35,21 +43,30 @@ class _TransactionFormState extends State<TransactionForm> {
         child: Column(
           children: [
             TextField(
-              
-              controller: titleCtrl,
+              controller: _titleCtrl,
               onSubmitted: (_) => _onSubmit(),
               decoration: InputDecoration(
                 labelText: "Título",
-               
               ),
             ),
             TextField(
-              controller: valueCtrl,
+              controller: _valueCtrl,
               keyboardType: TextInputType.numberWithOptions(decimal: true),
               onSubmitted: (_) => _onSubmit(),
               decoration: InputDecoration(
                 labelText: "Valor (R\$)",
-               
+              ),
+            ),
+            Container(
+              height: 70,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Nenhuma data selecionada!"),
+                  FlatButton(
+                      onPressed: _showDatePicker,
+                      child: Text('Selecionar Data'.toUpperCase()))
+                ],
               ),
             ),
             Row(
